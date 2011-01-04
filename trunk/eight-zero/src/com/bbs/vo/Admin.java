@@ -4,12 +4,12 @@ import java.sql.Date;
 
 public class Admin {
 
-	private int aid;
-	private String aname;
-	private String apwd;
-	private Date alasttime;
-	private String aip;
-	private int alevel;
+	private int aid;		//超级管理员ID
+	private String aname;	//超级管理员名字
+	private String apwd;	//超级管理员密码
+	private Date alasttime;	//超级管理员最后一次登录时间
+	private String aip;		//超级管理员上次登录IP
+	private int alevel;		//管理员级别
 	public int getAid() {
 		return aid;
 	}
