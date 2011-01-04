@@ -1,9 +1,6 @@
 package com.bbs.vo;
-
 import java.util.Date;
-
 public class MainTitle {
-
 	private int mid;				//主题表ID
 	private String mtitle;			//主题标题
 	private String mcontent;		//主题内容
