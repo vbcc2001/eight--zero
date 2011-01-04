@@ -6,9 +6,9 @@ public class Replay {
 
 	private int rid; 					// 回复表ID
 	private String rcontent;			 // 回复内容
-	private MainTitle mainTitle; 			// 回复主贴的信息(如:ID)
 	private Date rtime; 					// 回复时间
 	private Userinfo userinfo;				 // 回复人用户信息(如:ID)
+	private MainTitle mainTitle; 			// 回复主贴的信息(如:ID)
 	private int rstatus;					 // 回复状态(0:屏蔽;1可以看)
 
 	public int getRid() {

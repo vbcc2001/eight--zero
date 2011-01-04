@@ -1,5 +1,7 @@
 package com.bbs.vo;
 
+import java.util.Set;
+
 public class Userinfo {
 
 	private int uid;				//用户ID
@@ -10,12 +12,39 @@ public class Userinfo {
 	private String uphoto;			//用户头像
 	private String uhobby;			//用户爱好
 	private int uscore;				//用户积分
-	private int BBScurrency;		//用户金币
+	private int bbscurrency;		//用户金币
 	private int onlineTime;			//用户在线时间
 	private int onlineStatus;		//用户在线状态((0:下线;1:上线)
 	private int ulevel;				//用户级别(0:普通用户;1班主)
 	private UserTable userTable;	//用户注册表信息
+	private Set mainTitle;			//主题表信息(如:ID)
+	private Set replay;				//回复表信息(如:ID)
+	private Set outbox;				//收发邮件表信息
 	
+	public Set getMainTitle() {
+		return mainTitle;
+	}
+	public void setMainTitle(Set mainTitle) {
+		this.mainTitle = mainTitle;
+	}
+	public Set getReplay() {
+		return replay;
+	}
+	public void setReplay(Set replay) {
+		this.replay = replay;
+	}
+	public Set getOutbox() {
+		return outbox;
+	}
+	public void setOutbox(Set outbox) {
+		this.outbox = outbox;
+	}
+	public int getBbscurrency() {
+		return bbscurrency;
+	}
+	public void setBbscurrency(int bbscurrency) {
+		this.bbscurrency = bbscurrency;
+	}
 	public int getUid() {
 		return uid;
 	}
@@ -63,12 +92,6 @@ public class Userinfo {
 	}
 	public void setUscore(int uscore) {
 		this.uscore = uscore;
-	}
-	public int getBBScurrency() {
-		return BBScurrency;
-	}
-	public void setBBScurrency(int scurrency) {
-		BBScurrency = scurrency;
 	}
 	public int getOnlineTime() {
 		return onlineTime;

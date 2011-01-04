@@ -7,8 +7,8 @@ public class Outbox {
 	private int outboxid;					//收发邮件箱表ID
 	private Userinfo fromUserinfo;			//发件人用户信息(如:ID)
 	private String otitle;					//发信标题
-	private Date sendtime;					//发件人发信时间
 	private String ocontent;				//发信内容
+	private Date sendtime;					//发件人发信时间
 	private Userinfo toUserinfo;			//收件人用户信息(如:ID)
 	private int readStatus;					//邮件读取状态(0:已读;1:未读取)
 	private String sendThing;				//邮件附件

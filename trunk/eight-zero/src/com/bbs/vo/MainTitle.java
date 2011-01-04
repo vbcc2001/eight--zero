@@ -1,6 +1,10 @@
 package com.bbs.vo;
+
 import java.util.Date;
+import java.util.Set;
+
 public class MainTitle {
+
 	private int mid;				//主题表ID
 	private String mtitle;			//主题标题
 	private String mcontent;		//主题内容
@@ -9,6 +13,19 @@ public class MainTitle {
 	private String mThing;			//表发主题附件
 	private SonBorad sonBorad;				//主题类型信息(ID)
 	private int mstatus;			//主题状态(0:屏蔽;1可以看)
+	private Set replay;				//所有回复信息
+	public String getmThing() {
+		return mThing;
+	}
+	public void setmThing(String mThing) {
+		this.mThing = mThing;
+	}
+	public Set getReplay() {
+		return replay;
+	}
+	public void setReplay(Set replay) {
+		this.replay = replay;
+	}
 	public int getMid() {
 		return mid;
 	}

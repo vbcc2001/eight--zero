@@ -9,7 +9,13 @@ public class UserTable {
 	private String upwd;			//用户密码
 	private String uemail;			//用户邮箱
 	private int sex;				//用户性别(1:男生;0:女生)
-	private Date RegTime;			//注册时间
+	private Date regTime;			//注册时间
+	public Date getRegTime() {
+		return regTime;
+	}
+	public void setRegTime(Date regTime) {
+		this.regTime = regTime;
+	}
 	private int ustatus;			//用户状态(1:可用;0:锁定)
 	private Userinfo userinfo;		//用户信息表信息(如:uscore)
 	
@@ -42,12 +48,6 @@ public class UserTable {
 	}
 	public void setSex(int sex) {
 		this.sex = sex;
-	}
-	public Date getRegTime() {
-		return RegTime;
-	}
-	public void setRegTime(Date regTime) {
-		RegTime = regTime;
 	}
 	public int getUstatus() {
 		return ustatus;
