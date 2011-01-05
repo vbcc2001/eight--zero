@@ -64,7 +64,7 @@ public class ThemeServiceImpl implements ThemeService {
 		return list;
 	}
 /**
- * 根据id读贴
+ * 根据id读贴(后台)
  */
 	public MainTitle getMainTitleById(int mid) {
 		// TODO Auto-generated method stub
