@@ -9,7 +9,7 @@ public class Admin {
 	private String apwd;	//超级管理员密码
 	private Date alasttime;	//超级管理员最后一次登录时间
 	private String aip;		//超级管理员上次登录IP
-	private int alevel;		//管理员级别
+	private int alevel;		//管理员级别 
 	public int getAid() {
 		return aid;
 	}
