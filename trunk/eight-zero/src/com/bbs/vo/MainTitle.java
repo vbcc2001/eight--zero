@@ -14,18 +14,7 @@ public class MainTitle {
 	private SonBorad sonBorad;				//主题类型信息(ID)
 	private int mstatus;			//主题状态(0:屏蔽;1可以看)
 	private Set replay;				//所有回复信息
-	public String getmThing() {
-		return mThing;
-	}
-	public void setmThing(String mThing) {
-		this.mThing = mThing;
-	}
-	public Set getReplay() {
-		return replay;
-	}
-	public void setReplay(Set replay) {
-		this.replay = replay;
-	}
+	private int[] selectFlag;       //被选中的数组
 	public int getMid() {
 		return mid;
 	}
@@ -56,11 +45,11 @@ public class MainTitle {
 	public void setUserinfo(Userinfo userinfo) {
 		this.userinfo = userinfo;
 	}
-	public String getMThing() {
+	public String getmThing() {
 		return mThing;
 	}
-	public void setMThing(String thing) {
-		mThing = thing;
+	public void setmThing(String mThing) {
+		this.mThing = mThing;
 	}
 	public SonBorad getSonBorad() {
 		return sonBorad;
@@ -73,5 +62,17 @@ public class MainTitle {
 	}
 	public void setMstatus(int mstatus) {
 		this.mstatus = mstatus;
+	}
+	public Set getReplay() {
+		return replay;
+	}
+	public void setReplay(Set replay) {
+		this.replay = replay;
+	}
+	public int[] getSelectFlag() {
+		return selectFlag;
+	}
+	public void setSelectFlag(int[] selectFlag) {
+		this.selectFlag = selectFlag;
 	}
 }
