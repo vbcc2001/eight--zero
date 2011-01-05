@@ -28,6 +28,16 @@
 		</property>
 		<property name="mappingResources">
 			<list>
+			<value>com/bbs/vo/Admin.hbm.xml</value>
+			<value>com/bbs/vo/Boradtable.hbm.xml</value>
+			<value>com/bbs/vo/Friend.hbm.xml</value>
+			<value>com/bbs/vo/Grade.hbm.xml</value>
+			<value>com/bbs/vo/Maintitle.hbm.xml</value>
+			<value>com/bbs/vo/Outbox.hbm.xml</value>
+			<value>com/bbs/vo/Replay.hbm.xml</value>
+			<value>com/bbs/vo/Sonborad.hbm.xml</value>
+			<value>com/bbs/vo/Userinfo.hbm.xml</value>
+			<value>com/bbs/vo/Usertable.hbm.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -57,7 +67,6 @@
             </props> 
         </property> 
     </bean> 
-	
 
 
 </beans>
