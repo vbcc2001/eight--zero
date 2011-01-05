@@ -27,6 +27,5 @@
 			</list>
 		</property>
 	</bean>
-	<bean id="abc" class="122.111"></bean>
 
 </beans>
