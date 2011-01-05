@@ -1,57 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
 	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
-	<!-- contextConfigLocation参数定义了要装入的spring配置文件 begin-->
+<!-- ********************** spring 初始化参数 ********************************************-->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath*:applicationContext-*.xml</param-value>
+		<param-value>
+			/WEB-INF/classes/com/bbs/config/applicationContext_*.xml
+		</param-value>
 	</context-param>
-	<!--
-		ContextLoaderListener的作用就是启动Web容器时,自动装配ApplicationContext的配置信息. begin
-	-->
+<!-- ********************** spring 初始化配置 ********************************************-->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-	<!-- spring自带的过滤器 begin -->
+<!-- ********************** 自定义的编码过滤器 ********************************************-->
 	<filter>
-		<filter-name>Spring character encoding filter</filter-name>
-		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>com.bbs.util.EncodingFilter</filter-class>
 		<init-param>
-			<param-name>encoding</param-name>
+			<param-name>charset</param-name>
 			<param-value>utf-8</param-value>
 		</init-param>
 	</filter>
 	<filter-mapping>
-		<filter-name>Spring character encoding filter</filter-name>
+		<filter-name>encodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-	<!-- spring 管理hibernate的配置 -->
+	
+<!-- ********************** spring 管理 hibernate Session 的配置 ************************-->
 	<filter>
-		<filter-name>hibernateFilter</filter-name>
+		<filter-name>OpenSessionInView</filter-name>
 		<filter-class>
 			org.springframework.orm.hibernate3.support.OpenSessionInViewFilter</filter-class>
 		<init-param>
-			<param-name>flushMode</param-name>
-			<param-value>AUTO</param-value>
-		</init-param>
-		<init-param>
+		<!-- 如果开启lazy,这里需要配置为 true :在一次request中只用一个session,直到request结束才关闭 -->
 			<param-name>singleSession</param-name>
 			<param-value>true</param-value>
 		</init-param>
+		<init-param>
+			<param-name>sessionFactoryBeanName</param-name>
+			<param-value>sessionFactory</param-value>
+		</init-param>
 	</filter>
 	<filter-mapping>
-		<filter-name>hibernateFilter</filter-name>
+		<filter-name>OpenSessionInView</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-	<filter>
-		<filter-name>struts2</filter-name>
-		<filter-class>
-			org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
-	</filter>
-	<filter-mapping>
-		<filter-name>struts2</filter-name>
-		<url-pattern>*.do</url-pattern>
-	</filter-mapping>
+<!-- ********************** struts2的配置 ************************-->
+    <filter>
+        <filter-name>struts2</filter-name>
+        <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>struts2</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+	
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
 </web-app>
