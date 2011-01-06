@@ -1,0 +1,9 @@
+myeclipse更改jsp默认打开的方式:windows–>perferences–>general–>editors->file associations 选择一个自己需要的
+修改快捷提示:windows–>perferences–>general–>Keys :更改 content assist 为 alt+/
+
+CSS min-width 属性 :设定最小宽度
+
+CSS中position的absolute和relative的应用 :绝对定义和相对定义,用于调节父,子div位置
+
+CSS中	background-position: 0 -1196px; 放置在 background:url("../img/nav_bg.png"); 后才有效
+	
