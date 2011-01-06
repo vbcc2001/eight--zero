@@ -42,13 +42,19 @@
         <property name="ulevel" type="int">
         	<column name="ulevel"/>
         </property>
-       <many-to-one name="userTable" class="com.bbs.vo.UserTable" update="false" insert="false" fetch="select">
+          <many-to-one name="userTable" class="com.bbs.vo.UserTable" update="false" insert="false" fetch="select">
             <column name="uid" not-null="true" unique="true" />
         </many-to-one>
         <!--
          <one-to-one name="userTable" class="com.bbs.vo.UserTable" property-ref="userinfo">
             <column name="uid"/>
         </one-to-one>
+         <set name="usertables" inverse="true">
+            <key>
+                <column name="uid" not-null="true" unique="true" />
+            </key>
+            <one-to-many class="Usertable" />
+        </set>
       --><set name="mainTitle">
         	<key>
         		<column name="mid"/>

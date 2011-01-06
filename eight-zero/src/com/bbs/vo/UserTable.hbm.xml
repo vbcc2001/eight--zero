@@ -27,13 +27,17 @@
         <property name="ustatus" type="int">
         	<column name="ustatus"/>
         </property>
-         <set name="userinfo" inverse="true">
+         <many-to-one name="userinfo" class="com.bbs.vo.Userinfo" update="false" insert="false" fetch="select">
+            <column name="uid" not-null="true" unique="true" />
+        </many-to-one>
+       
+        <!--
+          <set name="userinfo" inverse="true">
             <key>
                 <column name="uid" not-null="true" unique="true" />
             </key>
             <one-to-many class="com.bbs.vo.Userinfo" />
         </set>
-        <!--
         <many-to-one name="userinfo" class="com.bbs.vo.Userinfo" cascade="all" unique="true" not-null="true">
         	<column name="uid" />
         </many-to-one>
