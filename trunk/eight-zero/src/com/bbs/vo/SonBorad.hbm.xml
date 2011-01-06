@@ -16,8 +16,8 @@
 		<many-to-one name="boradTable" class="com.bbs.vo.BoradTable">
 			<column name="bid"/>
 		</many-to-one>
-		<property name="bphoto" type="string">
-			<column name="bphoto" length="100" />
+		<property name="sphoto" type="string">
+			<column name="sphoto" length="100" />
 		</property>
 	</class>
 </hibernate-mapping>

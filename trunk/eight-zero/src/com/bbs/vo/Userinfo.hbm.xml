@@ -42,10 +42,10 @@
         <property name="ulevel" type="int">
         	<column name="ulevel"/>
         </property>
-         <many-to-one name="userinfo" class="com.bbs.vo.Userinfo" >
+         <!--<many-to-one name="userinfo" class="com.bbs.vo.Userinfo" insert="false" update="false" unique="false">
             <column name="uid"/>
         </many-to-one>
-        <set name="mainTitle">
+      --><set name="mainTitle">
         	<key>
         		<column name="mid"/>
         	</key>
