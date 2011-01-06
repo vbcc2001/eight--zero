@@ -21,7 +21,7 @@
         <property name="sendtime" type="date">
             <column name="sendtime"  />
         </property>
-         <many-to-one name="toUserinfo" class="com.bbs.vo.Userinfo" >
+         <many-to-one name="toUserinfo" class="com.bbs.vo.Userinfo" insert="false" update="false">
             <column name="uid"/>
         </many-to-one>
         <property name="readStatus" type="int">
