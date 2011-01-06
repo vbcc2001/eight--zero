@@ -14,7 +14,6 @@ public class MainTitle {
 	private SonBorad sonBorad;				//主题类型信息(ID)
 	private int mstatus;			//主题状态(0:屏蔽;1可以看)
 	private Set replay;				//所有回复信息
-	private int[] selectFlag;       //被选中的数组
 	public int getMid() {
 		return mid;
 	}
@@ -68,11 +67,5 @@ public class MainTitle {
 	}
 	public void setReplay(Set replay) {
 		this.replay = replay;
-	}
-	public int[] getSelectFlag() {
-		return selectFlag;
-	}
-	public void setSelectFlag(int[] selectFlag) {
-		this.selectFlag = selectFlag;
 	}
 }
