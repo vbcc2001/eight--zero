@@ -1,7 +1,9 @@
 package com.bbs.vo;
 
 import java.util.Date;
+import java.util.Set;
 
+//用户注册表
 public class UserTable {
 
 	private int uid;				//用户表ID
@@ -10,14 +12,21 @@ public class UserTable {
 	private String uemail;			//用户邮箱
 	private int sex;				//用户性别(1:男生;0:女生)
 	private Date regTime;			//注册时间
+	private int ustatus;			//用户状态(1:可用;0:锁定)
+	private Set userinfo;		//用户信息表信息(如:uscore)
+	public Set getUserinfo() {
+		return userinfo;
+	}
+	public void setUserinfo(Set userinfo) {
+		this.userinfo = userinfo;
+	}
 	public Date getRegTime() {
 		return regTime;
 	}
 	public void setRegTime(Date regTime) {
 		this.regTime = regTime;
 	}
-	private int ustatus;			//用户状态(1:可用;0:锁定)
-	private Userinfo userinfo;		//用户信息表信息(如:uscore)
+	
 	
 	public int getUid() {
 		return uid;
@@ -54,11 +63,5 @@ public class UserTable {
 	}
 	public void setUstatus(int ustatus) {
 		this.ustatus = ustatus;
-	}
-	public Userinfo getUserinfo() {
-		return userinfo;
-	}
-	public void setUserinfo(Userinfo userinfo) {
-		this.userinfo = userinfo;
 	}
 }

@@ -24,5 +24,18 @@
         <property name="regTime" type="date">
         	<column name="regTime"/>
         </property>
-    </class>
+        <property name="ustatus" type="int">
+        	<column name="ustatus"/>
+        </property>
+         <set name="userinfo" inverse="true">
+            <key>
+                <column name="uid" not-null="true" unique="true" />
+            </key>
+            <one-to-many class="com.bbs.vo.Userinfo" />
+        </set>
+        <!--
+        <many-to-one name="userinfo" class="com.bbs.vo.Userinfo" cascade="all" unique="true" not-null="true">
+        	<column name="uid" />
+        </many-to-one>
+    --></class>
 </hibernate-mapping>
