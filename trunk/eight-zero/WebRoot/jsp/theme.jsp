@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.fckeditor.net" prefix="FCK" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -15,6 +16,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
+	<!-- <script type="text/javascript" src="fckeditor/fckeditor.js"></script>-->
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
@@ -26,13 +28,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    	</div>
    	<br>
    帖子内容:
-   <img border="0" align="middle" src="../img/updateimg.jpg">&nbsp;
-   <img border="0" src="../img/flash.jpg">
-   <img border="0" src="../img/tupiao.jpg">&nbsp; 
-   <br>
- <textarea rows="10" cols="50"> </textarea>
- <br/>
-  <br/>
+   <FCK:editor instanceName="myEditor" basePath="/fckeditor" value="沙发空缺中"></FCK:editor>
+				<br>
 验证码:<input type="text" >
 <br> 
 <input type="submit" value="发表帖子">

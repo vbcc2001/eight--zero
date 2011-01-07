@@ -34,5 +34,9 @@
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/struts2.2.1/core/xwork-core-2.2.1.1.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/struts2.2.1/struts2-spring-plugin-2.2.1.1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/fckeditor/fckeditor-java-core-2.4.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/fckeditor/commons-fileupload-1.2.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/fckeditor/commons-io-1.3.2.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/fckeditor/slf4j-api-1.5.2.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>
