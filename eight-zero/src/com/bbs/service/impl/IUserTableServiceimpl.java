@@ -1,16 +1,26 @@
 package com.bbs.service.impl;
 
+import com.bbs.dao.UserTableDao;
 import com.bbs.service.UserTableService;
 import com.bbs.vo.UserTable;
 
 public class IUserTableServiceimpl implements UserTableService{
 
-	private UserTableService userTableService;
+	private UserTableDao userTableDao;
+
+
+	public UserTableDao getUserTableDao() {
+		return userTableDao;
+	}
+
+	public void setUserTableDao(UserTableDao userTableDao) {
+		this.userTableDao = userTableDao;
+	}
 
 	//查询是否存在此用户
 	public boolean checkUser(String uname) throws Exception {
 		
-		return userTableService.checkUser(uname);
+		return userTableDao.checkUser(uname);
 	}
 	
 	//增加用户
