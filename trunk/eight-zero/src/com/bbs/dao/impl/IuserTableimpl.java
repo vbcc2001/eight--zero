@@ -9,9 +9,9 @@ import com.bbs.vo.UserTable;
 
 public class IuserTableimpl extends HibernateDaoSupport implements UserTableDao{
 
-	//查询是否存在此用户
+	//查询是否存在此用户TRUE表示用户可用!
 	public boolean checkUser(String uname) throws Exception {
-		String queryString = "from UserTableDao u where u.uname=?";
+		String queryString = "from UserTable u where u.uname=?";
 		List list = getHibernateTemplate().find(queryString,uname);
 		if(list.size()>0)
 		{
