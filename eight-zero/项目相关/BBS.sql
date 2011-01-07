@@ -194,8 +194,8 @@ alter table SonBorad add constraint FK_Reference_4 foreign key (Bid)
 alter table Userinfo add constraint FK_Reference_1 foreign key (uid)
      references UserTable (uid) on delete restrict on update restrict;
     
-alter table UserTable add constraint FK_Reference_10 foreign key (uid)
-	references Userinfo (uid) on delete restrict on update restrict;
+/*alter table UserTable add constraint FK_Reference_10 foreign key (uid)
+	references Userinfo (uid) on delete restrict on update restrict;*/
 
 alter table outbox add constraint FK_Reference_3 foreign key (fromuid)
       references Userinfo (uid) on delete restrict on update restrict;
