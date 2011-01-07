@@ -3,6 +3,7 @@ package com.bbs.struts2;
 import com.bbs.service.UserTableService;
 import com.bbs.service.impl.IUserTableServiceimpl;
 import com.opensymphony.xwork2.ActionSupport;
+import com.sun.org.apache.xml.internal.security.keys.content.RetrievalMethod;
 
 public class UserTableAction extends ActionSupport{
 
@@ -53,9 +54,14 @@ public class UserTableAction extends ActionSupport{
 	 */
 	public String checkUser(){
 		try {
-			iuserTableServiceimpl.checkUser(uname);
+			
+			if(iuserTableServiceimpl.checkUser(uname))
+			{
+				return "nameIsUse";
+			}else{
+				return "noName";
+			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return "error";
