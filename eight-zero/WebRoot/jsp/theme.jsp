@@ -28,7 +28,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    	</div>
    	<br>
    帖子内容:
-   <FCK:editor instanceName="myEditor" basePath="/fckeditor" value="沙发空缺中"></FCK:editor>
+   <FCK:editor instanceName="myEditor" basePath="/fckeditor" value=""></FCK:editor>
 				<br>
 验证码:<input type="text" >
 <br> 
