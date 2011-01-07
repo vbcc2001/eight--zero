@@ -13,11 +13,11 @@ public class UserTable {
 	private int sex;				//用户性别(1:男生;0:女生)
 	private Date regTime;			//注册时间
 	private int ustatus;			//用户状态(1:可用;0:锁定)
-	private Set userinfo;		//用户信息表信息(如:uscore)
-	public Set getUserinfo() {
+	private Userinfo userinfo;		//用户信息表信息(如:uscore)
+	public Userinfo getUserinfo() {
 		return userinfo;
 	}
-	public void setUserinfo(Set userinfo) {
+	public void setUserinfo(Userinfo userinfo) {
 		this.userinfo = userinfo;
 	}
 	public Date getRegTime() {
