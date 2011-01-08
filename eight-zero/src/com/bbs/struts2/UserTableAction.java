@@ -1,5 +1,7 @@
 package com.bbs.struts2;
 
+import java.util.regex.Pattern;
+
 import com.bbs.service.UserTableService;
 import com.bbs.service.impl.IUserTableServiceimpl;
 import com.opensymphony.xwork2.ActionSupport;
@@ -55,13 +57,31 @@ public class UserTableAction extends ActionSupport{
 		try {
 			if(iuserTableServiceimpl.checkUser(uname))
 			{
-				return "nameIsUse";
-			}else{
 				return "noName";
+			}else{
+				return "nameIsUse";
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return "error";
 	}
+
+	public void validate() {
+		
+		if(this.uname==null || "".equals(this.uname.trim())){
+			this.addFieldError("userName", "用户名不能为空");
+		}else{
+			if(!Pattern.compile("^[a-zA-Z0-9]{1}[a-zA-Z0-9_]{3,15}$)").matcher(this.uemail).matches())
+			this.addFieldError("userName", "用户名格式错误");
+		}
+		if(this.uemail==null || "".equals(this.uemail.trim())){
+			this.addFieldError("mobile", "手机号不能为空");
+		}else{
+			if(!Pattern.compile("^1[358]\\d{9}$").matcher(this.uemail).matches()){
+				this.addFieldError("mobile", "手机号格式不正确");
+			}
+		}
+	}
+	
 }
