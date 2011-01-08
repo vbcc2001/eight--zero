@@ -11,6 +11,12 @@ body
     font-size: 12px;
 	background: url("../img/main_bg.gif") repeat-y scroll center 0 #E9E9E9;
 }
+#main
+{
+	min-width:960px;
+	margin-left:auto;
+	margin-right:auto;
+}
 li 
 {
     list-style-type: none;
@@ -24,7 +30,8 @@ a:hover
 {
 	text-decoration:underline
 }
-/* ---------导航条样式 -----------*/
+
+/* ---------信息条样式 -----------*/
 #header
 {
 	min-width:960px;
@@ -103,7 +110,7 @@ a:hover
     margin-right: 7px;
     text-align: center;
 }
-/* ------------导航条样式-----------------------*/
+/* ------------一级导航栏样式-----------------------*/
 #nav
 {
     clear: both;
@@ -139,64 +146,134 @@ a:hover
     background-repeat: repeat-x;
     height: 100%;
     margin: 0 4px;
-   
 }
-#nav ul
+
+#nav .ul
 {
  	padding: 0 0 0 10px;
 }
-#nav li
+#nav .li
 {
     float: left;
     height: 93px;
     line-height: normal;
     list-style: none outside none;
-    overflow: hidden;
     text-align: center;
     width: 88px;
+    position:relative;
+}
+#nav ul li:hover div#subNav,div#navBg
+{
+	visibility:visible;
 }
 #nav .navCellPadder 
 {
-    cursor: pointer;
     display: block;
-    height: 90px;
+    height: 61px;
     overflow: hidden;
     padding-top: 0;
-    position: relative;
     width: 88px;
 }
 #nav .navBg
 {
-    background-image: url("../img/nav_icons_bg.png");
+	height: 61px;
+	width: 80px;
+    margin: 0 auto 5px;
+    padding-top:4px;
+}
+div.navBg:hover
+{
+   	background-image: url("../img/nav_icons_bg.png");
     background-repeat: no-repeat;
     height: 61px;
     margin: 0 auto 5px;
+    padding-top:4px;
     width: 80px;
+}
+#nav .navIcon
+{
+	height: 50px;
+    width: 50px;
+    margin: 0 auto 0;
     cursor: pointer;
 }
-#nav .navTitleTop
+/* -------------二级导航栏样式-----------------------*/
+#subNav
 {
-    background: url("../img/nav_bg.png") no-repeat scroll 0 0 transparent;
-   	background-position: center -1172px;
+	position:absolute;
+	left:25px;
+	overflow:visible;
+	z-index: 999;
+	visibility:hidden;
+}
+#subNav .title
+{
+	background: url("../img/subNav_bg.png") no-repeat scroll 0px -6px transparent;
+	height: 5px;
+    width: 40px;
+
+}
+#subNav .content
+{
+	position:absolute;
+	overflow:visible;
+	left: -20px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#subNav .top
+{
+	background: url("../img/subNav_bg.png") no-repeat scroll transparent;
+	height: 3px;
+	width:80px;
+
+}
+#subNav .middle
+{
+	background: url("../img/subNav_bg2.png") repeat-y scroll transparent;
+	width:80px;
+}
+#subNav .bottom
+{
+	background: url("../img/subNav_bg.png") no-repeat scroll 0px -3px transparent;
+	height: 3px;
+	width:80px;
+
+}
+#subNav ul
+{
+	
+}
+#subNav li
+{
+	 cursor: pointer;
+}
+#subNav .subNavBg 
+{
+	padding-top:10px;
+}
+#subNav .subNavIcon
+{
+	height: 50px;
+    width: 50px;
+    margin: 0 auto 0;
     cursor: pointer;
-    height: 3px;
-    overflow: hidden;
+
+}
+div.subNavIcon:hover
+{
+	height: 50px;
+    width: 50px;
+    margin: 0 auto 0;
+    cursor: pointer;
+    border:1px solid red;
 }
 
-#nav .navTitleLeft 
+#subNav .font
 {
-    background: url("../img/nav_title_main.png") no-repeat scroll 0 0 transparent;
-    cursor: pointer;
-    display: inline-block;
-    height: 19px;
-    padding-left: 4px;
-}
-#nav .navTitleRight 
-{
-    background: url("../img/nav_title_main.png") no-repeat scroll 0 0 transparent;
-    background-position: right -19px;
-    cursor: pointer;
-    display: inline-block;
-    height: 19px;
-    padding-right: 4px;
+	
+	color: white;
+	font-family: tahoma,simsun;
+    font-size: 12px;
+    margin-top:5px;
 }
