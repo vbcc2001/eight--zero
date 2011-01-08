@@ -7,7 +7,6 @@
     <constant name="struts.objectFactory" value="spring"/>
      <package name="default"  extends="struts-default">
      	<action name="userTable_*" class="userTableAction" method="{1}">
-     		<result name="nameIsUse" >/jsp/register.jsp</result>
      		<result name="input">/jsp/register.jsp</result>
      	</action>
      </package>
