@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -14,21 +15,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
 	<link rel="stylesheet" href="css/login.css" type="text/css"></link>
-  	<script type="text/javascript" src="../../js/users.js"></script>
-    <script type="text/javascript" src="js/users.js"></script>
+	<script type="text/javascript" src="js/jquery-1.4.4.js"></script>
+    <script type="text/javascript" src="../js/jquery-1.4.4.js"></script>
+  	<script type="text/javascript" src="../js/userTable.js"></script>
+    <script type="text/javascript" src="js/userTable.js"></script>
+    
   </head>
   
   <body>
   <jsp:include page="header.jsp" />
     <DIV id="login" style="width: 550px" >
 <form action="userTable_check.action" method="post" name="registerForm" id="registerForm" onsubmit="return checkall()"  enctype="multipart/form-data" >
-	<SPAN class="title">欢迎注册IASK会员：</SPAN><BR>
+	<SPAN class="title">欢迎注册80社团会员：</SPAN><BR>
 	<span class="star" ></span>
 	<TABLE>
 	  <TBODY>
 		  <TR>
 		    <TD><SPAN class="star">*</SPAN>会员名</TD>
-		    <TD><INPUT class="text" type="text" id="userName" name="user.u_name" onblur="return checkuname()" />
+		    <TD><INPUT class="text" type="text" id="userName" name="uname" />
+		    <span  class="info" id="userNameInfo"></span>
 		    </TD>
 		    	
 		  </TR>
@@ -40,7 +45,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		  
 		  <TR>
 		    <TD><SPAN class="star">*</SPAN>密码</TD>
-		    <TD><INPUT class="text" type="password" id="password" name="user.u_pwd" onblur="return checkpwd()"()/>
+		    <TD><INPUT class="text" type="password" id="password" name="upwd"/>
+		    <span  class="info" id="passwordInfo"></span>
 		    	</TD>
 		    	
 		  </TR>
@@ -52,8 +58,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		  
 		  <TR>
 		    <TD><SPAN class="star">*</SPAN>重复密码</TD>
-		    <TD><INPUT class="text" type="password" id="repeatPassword" name="repeatPassword" onblur="return checkpwd2()" />
-		    	</span></TD>
+		    <TD><INPUT class="text" type="password" id="repeatPassword" name="upwd2"/>
+		    	<span  class="info" id="repeatPasswordInfo"></span></TD>
 		    	
 		  </TR>
 		  <tr>
@@ -63,20 +69,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		  
 		  <TR>
 		    <TD><SPAN class="star">*</SPAN>EMAIL</TD>
-		    <TD><INPUT class="text" type="text" id="email" name="user.u_email" onblur="return checkemail()"/>
+		    <TD><INPUT class="text" type="text" id="email" name="uemail" />
+		    	<span id="emailInfo"></span>
 		    	</TD>
 		    	
 		  </TR>
 		  <tr>
 		  	<td></td>
-		  	<td><font color="#999999">请输入您的电子邮箱,找回密码时使用</font></td>
+		  	<td><font color="#999999">请输入您的电子邮箱,找回密码时使用</font>
+		  	</td>
 		  </tr>
 		  
 		  <TR>
 		    <TD><SPAN class="star">&nbsp;</SPAN>性别</TD>
 		    <TD>
-		    	<input name="user.u_sex" type="radio" value="男" checked="checked" />男
-		    	<input name="user.u_sex" type="radio" value="女">女
+		    	<input name="sex" type="radio" value="男" checked="checked" />男
+		    	<input name="sex" type="radio" value="女">女
 		    	</TD>
 		  </TR>
 		  
@@ -98,6 +106,5 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</TABLE>
 </form>
 </DIV>
-<jsp:include page="navigation.jsp" /> 
   </body>
 </html>

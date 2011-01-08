@@ -4,10 +4,11 @@
 	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
     <constant name="struts.devMode" value="true" />
     <constant name="struts.ognl.allowStaticMethodAccess" value="true"/>
-    
+    <constant name="struts.objectFactory" value="spring"/>
      <package name="default"  extends="struts-default">
-     	<action name="userTable_*" class="com.bbs.struts2.UserTableAction">
+     	<action name="userTable_*" class="userTableAction" method="{1}">
      		<result name="nameIsUse" >/jsp/register.jsp</result>
+     		<result name="input">/jsp/register.jsp</result>
      	</action>
      </package>
 </struts>    
