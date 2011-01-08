@@ -1,5 +1,4 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-<%@ taglib prefix="html" uri="http://jakarta.apache.org/struts/tags-html"  %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -30,7 +29,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		  <TR>
 		    <TD><SPAN class="star">*</SPAN>会员名</TD>
 		    <TD><INPUT class="text" type="text" id="userName" name="user.u_name" onblur="return checkuname()" />
-		    	<span  class="info" id="userNameInfo"><html:errors property="u_name"/></span></TD>
+		    </TD>
 		    	
 		  </TR>
 		  
@@ -42,7 +41,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		  <TR>
 		    <TD><SPAN class="star">*</SPAN>密码</TD>
 		    <TD><INPUT class="text" type="password" id="password" name="user.u_pwd" onblur="return checkpwd()"()/>
-		    	<span class="info" id="passwordInfo"><html:errors property="u_pwd"/></span></TD>
+		    	</TD>
 		    	
 		  </TR>
 		  
@@ -54,7 +53,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		  <TR>
 		    <TD><SPAN class="star">*</SPAN>重复密码</TD>
 		    <TD><INPUT class="text" type="password" id="repeatPassword" name="repeatPassword" onblur="return checkpwd2()" />
-		    	<span class="info" id="repeatPasswordInfo" ><html:errors property="repeatpassword"/></span></TD>
+		    	</span></TD>
 		    	
 		  </TR>
 		  <tr>
@@ -65,7 +64,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		  <TR>
 		    <TD><SPAN class="star">*</SPAN>EMAIL</TD>
 		    <TD><INPUT class="text" type="text" id="email" name="user.u_email" onblur="return checkemail()"/>
-		    	<span class="info" id="emailInfo" ><html:errors property="u_email"/></span></TD>
+		    	</TD>
 		    	
 		  </TR>
 		  <tr>
@@ -78,14 +77,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    <TD>
 		    	<input name="user.u_sex" type="radio" value="男" checked="checked" />男
 		    	<input name="user.u_sex" type="radio" value="女">女
-		    	<span class="info" id="sexInfo" ></span></TD>
+		    	</TD>
 		  </TR>
 		  
 		  <TR>
 		    <TD><SPAN class="star">*</SPAN>验证码</TD>
 		    <TD><INPUT class="text" type="text" id="validateCode" name="validateCode" size="6" onblur="return checkregcode()" onkeyup="checkCode(this)" />
 		    	<input class="validateCode" type="text" size="8" disabled="disabled" />
-		    	<span class="info" id="validateCodeInfo"><html:errors property="validateCode"/></span></TD>
+		    	</TD>
 		  </TR>
 		  <TR>
 		    <TD></TD>
