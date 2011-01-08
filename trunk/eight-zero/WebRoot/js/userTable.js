@@ -17,6 +17,7 @@ $(document).ready(function () {
 				return false;
 			}
 			view.html("");
+			$.post("userTable_checkUser.action",{uname:uname},function(response){alert("ff");});
 		}
 		
 	});

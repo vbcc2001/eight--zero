@@ -1,87 +1,120 @@
 package com.bbs.struts2;
 
+import java.io.PrintWriter;
 import java.util.regex.Pattern;
 
-import com.bbs.service.UserTableService;
+import javax.servlet.http.HttpServletResponse;
+import javax.xml.ws.Response;
+
 import com.bbs.service.impl.IUserTableServiceimpl;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class UserTableAction extends ActionSupport{
+public class UserTableAction extends ActionSupport {
 
-	private String uname;			//用户名(账号)
-	private String upwd;			//用户密码
-	private String upwd2;			//第二次用户密码
-	private String uemail;			//用户邮箱
-	private int sex;				//用户性别(1:男生;0:女生)
-	private IUserTableServiceimpl iuserTableServiceimpl;		
-	
+	private String uname; // 用户名(账号)
+	private String upwd; // 用户密码
+	private String upwd2; // 第二次用户密码
+	private String uemail; // 用户邮箱
+	private int sex; // 用户性别(1:男生;0:女生)
+	private IUserTableServiceimpl iuserTableServiceimpl;
+
 	public String getUpwd2() {
 		return upwd2;
 	}
+
 	public void setUpwd2(String upwd2) {
 		this.upwd2 = upwd2;
 	}
-	public void setIuserTableServiceimpl(IUserTableServiceimpl iuserTableServiceimpl) {
+
+	public void setIuserTableServiceimpl(
+			IUserTableServiceimpl iuserTableServiceimpl) {
 		this.iuserTableServiceimpl = iuserTableServiceimpl;
 	}
+
 	public String getUname() {
 		return uname;
 	}
+
 	public void setUname(String uname) {
 		this.uname = uname;
 	}
+
 	public String getUpwd() {
 		return upwd;
 	}
+
 	public void setUpwd(String upwd) {
 		this.upwd = upwd;
 	}
+
 	public String getUemail() {
 		return uemail;
 	}
+
 	public void setUemail(String uemail) {
 		this.uemail = uemail;
 	}
+
 	public int getSex() {
 		return sex;
 	}
+
 	public void setSex(int sex) {
 		this.sex = sex;
 	}
-	
+
 	/**
 	 * 检查用户名是否存在
+	 * 
 	 * @return
 	 */
-	public String checkUser(){
+	public String checkUser() {
 		try {
-			if(iuserTableServiceimpl.checkUser(uname))
-			{
-				return "noName";
-			}else{
-				return "nameIsUse";
+			System.out.println(this.uname);
+			if (iuserTableServiceimpl.checkUser(uname)) {
+			} else {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "error";
+		return null;
 	}
 
-	public void validate() {
+	/*public void validate() {
 		
-		if(this.uname==null || "".equals(this.uname.trim())){
-			this.addFieldError("userName", "用户名不能为空");
-		}else{
-			if(!Pattern.compile("^[a-zA-Z0-9]{1}[a-zA-Z0-9_]{3,15}$)").matcher(this.uemail).matches())
-			this.addFieldError("userName", "用户名格式错误");
-		}
-		if(this.uemail==null || "".equals(this.uemail.trim())){
-			this.addFieldError("mobile", "手机号不能为空");
-		}else{
-			if(!Pattern.compile("^1[358]\\d{9}$").matcher(this.uemail).matches()){
-				this.addFieldError("mobile", "手机号格式不正确");
+		if (this.uname == null || "".equals(this.uname.trim())) {
+			this.addFieldError("suserName", "用户名不能为空***");
+		} else {
+			if (!Pattern.compile("^[a-zA-Z0-9]{1}[a-zA-Z0-9_]{3,15}$").matcher(
+					this.uname).matches())
+				this.addFieldError("userName", "用户名格式错误----");
+			else{
+				System.out.println("bb");
+				checkUser();
 			}
 		}
-	}
-	
+		if (this.upwd == null || "".equals(this.upwd)) {
+			this.addFieldError("supwd", "请输入密码***");
+		} else {
+			if (!Pattern.compile("^\\w{6,20}$").matcher(this.upwd).matches()) {
+				this.addFieldError("supwd", "请输入6~20位的密码----");
+			}
+		}
+		if (this.upwd2 == null || "".equals(this.upwd2)) {
+			this.addFieldError("supwd2", "请输入密码***");
+		} else {
+			if (this.upwd != this.upwd2) {
+				this.addFieldError("supwd2", "两次密码不同，请重新输入");
+			}
+		}
+		if (this.uemail == null || "".equals(this.uemail.trim())) {
+			this.addFieldError("suemail", "邮箱不能为空");
+		} else {
+			if (!Pattern.compile(
+					"^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$")
+					.matcher(this.uemail).matches()) {
+				this.addFieldError("suemail", "邮箱号格式不正确");
+			}
+		}
+	}*/
 }

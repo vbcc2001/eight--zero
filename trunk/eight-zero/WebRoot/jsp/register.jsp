@@ -25,7 +25,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
   <jsp:include page="header.jsp" />
     <DIV id="login" style="width: 550px" >
-<form action="userTable_check.action" method="post" name="registerForm" id="registerForm" onsubmit="return checkall()"  enctype="multipart/form-data" >
+<form action="userTable_checkUser.action" method="post" name="registerForm" id="registerForm" >
 	<SPAN class="title">欢迎注册80社团会员：</SPAN><BR>
 	<span class="star" ></span>
 	<TABLE>
@@ -33,7 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		  <TR>
 		    <TD><SPAN class="star">*</SPAN>会员名</TD>
 		    <TD><INPUT class="text" type="text" id="userName" name="uname" />
-		    <span  class="info" id="userNameInfo"></span>
+		    <span  class="info" id="userNameInfo"></span><s:label name="suserName"></s:label>
 		    </TD>
 		    	
 		  </TR>
@@ -46,7 +46,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		  <TR>
 		    <TD><SPAN class="star">*</SPAN>密码</TD>
 		    <TD><INPUT class="text" type="password" id="password" name="upwd"/>
-		    <span  class="info" id="passwordInfo"></span>
+		    <span  class="info" id="passwordInfo"></span><s:label name="supwd"></s:label>
 		    	</TD>
 		    	
 		  </TR>
@@ -59,7 +59,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		  <TR>
 		    <TD><SPAN class="star">*</SPAN>重复密码</TD>
 		    <TD><INPUT class="text" type="password" id="repeatPassword" name="upwd2"/>
-		    	<span  class="info" id="repeatPasswordInfo"></span></TD>
+		    	<span  class="info" id="repeatPasswordInfo"></span></span><s:label name="supwd2"></s:label></TD>
 		    	
 		  </TR>
 		  <tr>
@@ -70,7 +70,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		  <TR>
 		    <TD><SPAN class="star">*</SPAN>EMAIL</TD>
 		    <TD><INPUT class="text" type="text" id="email" name="uemail" />
-		    	<span id="emailInfo"></span>
+		    	<span id="emailInfo"></span><s:label name="suemail"></s:label>
 		    	</TD>
 		    	
 		  </TR>
@@ -83,8 +83,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		  <TR>
 		    <TD><SPAN class="star">&nbsp;</SPAN>性别</TD>
 		    <TD>
-		    	<input name="sex" type="radio" value="男" checked="checked" />男
-		    	<input name="sex" type="radio" value="女">女
+		    	<input name="sex" type="radio" value="1" checked="checked" />男
+		    	<input name="sex" type="radio" value="0">女
 		    	</TD>
 		  </TR>
 		  
