@@ -283,14 +283,57 @@ div.subNavIcon:hover
 	 width:940px; 
 	 margin: 0 auto 0 ;
 }
-#hotindex th 
+#hotindex .title
 { 
-	height:40px  ; 
+	height:40px ; 
 	border:1px #aaa solid ; 
 	background-image:url(../img/hotIndex.png);
 	font-size:20px ; 
-	color:#CF3 ; }
+	color:#CF3 ;
+	text-align: center;
+	 
+}
+#hotindex th
+{
+	background: none repeat scroll 0 0 #E6E6E6;
+    border-bottom: 1px solid #BFBFBF;
+    border-right: 1px solid #FFFFFF;
+    font-weight: bolder;
+    margin: 0 10px;
+    padding-left: 8px;
+    text-align: left;
+    font-size: 12px;
+	
+}
 #hotindex td
  {  
  	font-size:12px ;
  }
+ #hotindex .bg
+ {  
+ 	background:#ffccff;
+ }
+#hotindex a
+{
+	color: #015BAB;
+	cursor: pointer;
+	font-weight: bolder;
+}
+
+/***********************************bottom页面用********************************************/
+#bottom
+{
+	width: 940; 
+	height: 40px;
+	margin: 5px auto 0;
+	padding-bottom: 30px;
+}
+#bottom a
+{
+	color: #015BAB;
+	cursor: pointer;
+}
+#bottom div
+{
+	padding-top: 10px;
+}
