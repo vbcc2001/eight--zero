@@ -33,7 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		  <TR>
 		    <TD><SPAN class="star">*</SPAN>会员名</TD>
 		    <TD><INPUT class="text" type="text" id="userName" name="uname" />
-		    <span  class="info" id="userNameInfo"></span><s:label name="suserName"></s:label>
+		    <span  class="info" id="userNameInfo"></span><s:label name="suserName"></s:label><div id="nameisOkOrNo"></div>
 		    </TD>
 		    	
 		  </TR>

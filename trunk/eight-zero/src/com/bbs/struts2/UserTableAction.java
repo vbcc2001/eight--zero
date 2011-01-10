@@ -4,7 +4,8 @@ import java.io.PrintWriter;
 import java.util.regex.Pattern;
 
 import javax.servlet.http.HttpServletResponse;
-import javax.xml.ws.Response;
+
+import org.apache.struts2.ServletActionContext;
 
 import com.bbs.service.impl.IUserTableServiceimpl;
 import com.opensymphony.xwork2.ActionSupport;
@@ -70,9 +71,27 @@ public class UserTableAction extends ActionSupport {
 	 */
 	public String checkUser() {
 		try {
+			HttpServletResponse res = ServletActionContext.getResponse() ;
+			PrintWriter out = res.getWriter();
 			System.out.println(this.uname);
-			if (iuserTableServiceimpl.checkUser(uname)) {
+			if (this.uname == null || "".equals(this.uname.trim())) {
+				this.addFieldError("suserName", "用户名不能为空***");
+				return "input";
 			} else {
+				if (!Pattern.compile("^[a-zA-Z0-9]{1}[a-zA-Z0-9_]{3,15}$")
+						.matcher(this.uname).matches()) {
+					System.out.println("cc");
+					this.addFieldError("suserName", "用户名格式错误----");
+					return "input";
+				} else {
+					System.out.println("bb");
+					out.print("");
+					if (iuserTableServiceimpl.checkUser(uname)) {
+						out.print("可以使用!");
+					} else {
+						out.print("不可以使用!");
+					}
+				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -80,41 +99,24 @@ public class UserTableAction extends ActionSupport {
 		return null;
 	}
 
-	/*public void validate() {
-		
-		if (this.uname == null || "".equals(this.uname.trim())) {
-			this.addFieldError("suserName", "用户名不能为空***");
-		} else {
-			if (!Pattern.compile("^[a-zA-Z0-9]{1}[a-zA-Z0-9_]{3,15}$").matcher(
-					this.uname).matches())
-				this.addFieldError("userName", "用户名格式错误----");
-			else{
-				System.out.println("bb");
-				checkUser();
-			}
-		}
-		if (this.upwd == null || "".equals(this.upwd)) {
-			this.addFieldError("supwd", "请输入密码***");
-		} else {
-			if (!Pattern.compile("^\\w{6,20}$").matcher(this.upwd).matches()) {
-				this.addFieldError("supwd", "请输入6~20位的密码----");
-			}
-		}
-		if (this.upwd2 == null || "".equals(this.upwd2)) {
-			this.addFieldError("supwd2", "请输入密码***");
-		} else {
-			if (this.upwd != this.upwd2) {
-				this.addFieldError("supwd2", "两次密码不同，请重新输入");
-			}
-		}
-		if (this.uemail == null || "".equals(this.uemail.trim())) {
-			this.addFieldError("suemail", "邮箱不能为空");
-		} else {
-			if (!Pattern.compile(
-					"^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$")
-					.matcher(this.uemail).matches()) {
-				this.addFieldError("suemail", "邮箱号格式不正确");
-			}
-		}
-	}*/
+	/*
+	 * public void validate() {
+	 * 
+	 * if (this.uname == null || "".equals(this.uname.trim())) {
+	 * this.addFieldError("suserName", "用户名不能为空***"); } else { if
+	 * (!Pattern.compile("^[a-zA-Z0-9]{1}[a-zA-Z0-9_]{3,15}$").matcher(
+	 * this.uname).matches()) this.addFieldError("userName", "用户名格式错误----");
+	 * else{ System.out.println("bb"); checkUser(); } } if (this.upwd == null ||
+	 * "".equals(this.upwd)) { this.addFieldError("supwd", "请输入密码***"); } else {
+	 * if (!Pattern.compile("^\\w{6,20}$").matcher(this.upwd).matches()) {
+	 * this.addFieldError("supwd", "请输入6~20位的密码----"); } } if (this.upwd2 ==
+	 * null || "".equals(this.upwd2)) { this.addFieldError("supwd2",
+	 * "请输入密码***"); } else { if (this.upwd != this.upwd2) {
+	 * this.addFieldError("supwd2", "两次密码不同，请重新输入"); } } if (this.uemail == null
+	 * || "".equals(this.uemail.trim())) { this.addFieldError("suemail",
+	 * "邮箱不能为空"); } else { if (!Pattern.compile(
+	 * "^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$")
+	 * .matcher(this.uemail).matches()) { this.addFieldError("suemail",
+	 * "邮箱号格式不正确"); } } }
+	 */
 }
