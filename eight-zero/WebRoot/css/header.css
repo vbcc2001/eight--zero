@@ -276,3 +276,21 @@ div.subNavIcon:hover
     font-size: 12px;
     margin-top:5px;
 }
+
+/***********************************hotindex页面用********************************************/
+#hotindex
+{
+	 width:940px; 
+	 margin: 0 auto 0 ;
+}
+#hotindex th 
+{ 
+	height:40px  ; 
+	border:1px #aaa solid ; 
+	background-image:url(../img/hotIndex.png);
+	font-size:20px ; 
+	color:#CF3 ; }
+#hotindex td
+ {  
+ 	font-size:12px ;
+ }
