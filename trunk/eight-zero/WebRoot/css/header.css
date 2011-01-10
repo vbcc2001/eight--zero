@@ -5,7 +5,7 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fiel
     padding: 0;
 }
 body
-{
+{	min-width:960px;
 	text-align:center; /*IE8div居中兼容设置*/
     font-family: tahoma,simsun;
     font-size: 12px;
@@ -115,8 +115,7 @@ a:hover
 {
     clear: both;
     height: 102px;
-    margin: 0 auto;
-    margin-top:5px;
+    margin: 0 auto 0;
     position: relative;
     width: 912px;
 }
@@ -178,7 +177,7 @@ a:hover
 {
 	height: 61px;
 	width: 80px;
-    margin: 0 auto 5px;
+    margin: 2px auto 5px;
     padding-top:4px;
 }
 div.navBg:hover
