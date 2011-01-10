@@ -67,6 +67,10 @@
             </props> 
         </property> 
     </bean> 
-
-
+<!-- ******************** 通用bean配置********************************** -->
+	  <bean id="baseDao" class="com.bbs.dao.impl.BaseDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"></ref>
+		</property>
+	</bean>
 </beans>

@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -23,11 +24,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="navRight"></div>
 			<div class="navMiddle">
 				<ul class="ul">
+				<c:forEach items="${boradList}" var="boradTable">
 					<li class="li">
 						<div class="navCellPadder">
 							<div class="navBg">
 								<div class="navIcon"
-									style="background-image: url('img/001.PNG'); background-repeat: no-repeat;"
+									style="background-image: url('img/borad_img/${boradTable.bphoto}'); background-repeat: no-repeat;"
 									onclick="javascript:gotoBoradtable(${null})"></div>
 							</div>
 						</div>
@@ -37,21 +39,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<div class="top"></div>
 								<div class="middle">
 									<ul>
-									
+									<c:forEach items="${boradTable.sonBorad}" var="sonBorad">
 										<li >
 											<div class="subNavBg">
 											<div class="subNavIcon"
-												style="background-image: url('img/001.PNG'); background-repeat: no-repeat;"
+												style="background-image: url('img/sonBorad_img/${sonBorad.sphoto}'); background-repeat: no-repeat;"
 												onclick="javascript:gotoBoradtable(${null},${null})"></div>
-											<div class="font">新鲜事</span>
+											<div class="font">${sonBorad.sonName}</span>
 											</div>
 										</li>
+										</c:forEach>
 										</ul>
 								</div>
 								<div class="bottom"></div>
 							</div>
 						</div>
 					</li>
+					</c:forEach>
 				</ul>
 			</div>
 		</div>

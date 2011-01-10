@@ -17,5 +17,11 @@
 	</bean>
 	 -->
 	<!-- 刘晓昌END -->
+<!-- ******************** 版块分类bean配置********************************** -->
+	<bean id="boradTableService" class="com.bbs.service.impl.BoradTableServiceImpl">
+		<property name="baseDao">
+			<ref bean="baseDao"></ref>
+		</property>
+	</bean>
 	
 </beans>
