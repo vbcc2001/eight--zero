@@ -35,5 +35,19 @@ public interface BaseDao
 	
 	public List<Object> findAll(Page page,String className)throws Exception;
 	
+	/**
+	 * 查询总条数
+	 * @param className
+	 * @return
+	 * @throws Exception
+	 */
 	public int getSize(String className)throws Exception;
+	
+	/**
+	 * 查询所有
+	 * @param page
+	 * @return
+	 * @throws Exception
+	 */
+	public List<Object> findAll(String className)throws Exception;
 }
