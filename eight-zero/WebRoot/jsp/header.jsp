@@ -26,12 +26,12 @@ $(function(){
         <c:when test="${user==null}">
            	<a href="#" title="登录">登录</a>
 		    <a href="#" title="注册">注册</a>
-		    <a href="#" title="忘记密码">忘记密码</a>
+		    <a href="#" title="忘记密码">忘记密码&nbsp;</a>
 		</c:when>
 		<c:otherwise>
 			欢迎您,&nbsp;&nbsp;${user.name}&nbsp;&nbsp;[
 		    <a href="#" title="注册">退出</a>]&nbsp;&nbsp;|&nbsp;
-		    <a href="#" title="忘记密码">个人中心</a> 
+		    <a href="#" title="忘记密码">个人中心&nbsp;</a> 
 		</c:otherwise>
 		</c:choose>
        </div>
