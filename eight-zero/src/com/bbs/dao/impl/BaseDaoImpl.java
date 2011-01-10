@@ -41,4 +41,9 @@ public class BaseDaoImpl extends HibernateDaoSupport implements BaseDao {
 		row = this.getHibernateTemplate().find("from " +className).size();
 		return row;
 	}
+	
+	public List<Object> findAll(String className) throws Exception {
+		// TODO Auto-generated method stub
+		return this.getHibernateTemplate().find("from "+className);
+	}
 }
