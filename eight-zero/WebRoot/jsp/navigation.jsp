@@ -11,7 +11,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		//鼠标点击跳转事件
 		function gotoBoradtable(id,subid) 
 		{
-
 			window.location.href = "index.jsp?id=" + id;
 		}
 		</script>
@@ -30,7 +29,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<div class="navBg">
 								<div class="navIcon"
 									style="background-image: url('img/borad_img/${boradTable.bphoto}'); background-repeat: no-repeat;"
-									onclick="javascript:gotoBoradtable(${null})"></div>
+									onclick="javascript:gotoBoradtable(${boradTable.bid})"></div>
 							</div>
 						</div>
 						<div id="subNav">
@@ -44,7 +43,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											<div class="subNavBg">
 											<div class="subNavIcon"
 												style="background-image: url('img/sonBorad_img/${sonBorad.sphoto}'); background-repeat: no-repeat;"
-												onclick="javascript:gotoBoradtable(${null},${null})"></div>
+												onclick="javascript:gotoBoradtable(${boradTable.bid},${sonBorad.sid})"></div>
 											<div class="font">${sonBorad.sonName}</span>
 											</div>
 										</li>
@@ -60,6 +59,5 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 		</div>
 		</div>
-		
 	</body>
 </html>
