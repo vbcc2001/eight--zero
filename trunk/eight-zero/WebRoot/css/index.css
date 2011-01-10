@@ -1,0 +1,8 @@
+/* CSS Document */
+
+/***********************************hotindex“≥√Ê”√********************************************/
+#hotindex { width:940px; margin: 0 auto 0 ;}
+#hotindex th { height:40px  ; border:1px #aaa solid ; vertical-align:middle ; background-image:url(../img/hotIndex.png); font-size:20px ; color:#CF3 ; }
+#hotindex td {  }
+#hotindex .talbe { width:400px; margin-left:auto ; margin-right:auto; }
+#hotindex .a { font-size:14px ; }
