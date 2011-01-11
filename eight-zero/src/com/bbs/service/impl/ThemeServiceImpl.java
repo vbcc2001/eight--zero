@@ -2,24 +2,26 @@ package com.bbs.service.impl;
 
 import java.util.List;
 
+import com.bbs.dao.BaseDao;
 import com.bbs.dao.ThemeDao;
 import com.bbs.service.ThemeService;
 import com.bbs.vo.MainTitle;
 import com.bbs.vo.Page;
 
 public class ThemeServiceImpl implements ThemeService {
-	private ThemeDao themeDao;
-
-	public void setThemeDao(ThemeDao themeDao) {
-		this.themeDao = themeDao;
+	private BaseDao baseDao;
+	private MainTitle mt = new MainTitle();
+	
+public void setBaseDao(BaseDao baseDao) {
+	System.out.println(baseDao+".......s");
+		this.baseDao = baseDao;
 	}
 /**
  * 批量删除帖子
  */
 	public void DeleteTheme(int[] midList) {
-		// TODO Auto-generated method stub
 			try {
-				this.themeDao.DeleteTheme(midList);
+				//this.baseDao.delete(object);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -31,7 +33,7 @@ public class ThemeServiceImpl implements ThemeService {
 	public void IncreaseTheme(MainTitle mainTitle) {
 		// TODO Auto-generated method stub
 		try {
-			this.themeDao.IncreaseTheme(mainTitle);
+			this.baseDao.add(this.mt);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -43,7 +45,7 @@ public class ThemeServiceImpl implements ThemeService {
 	public void ModifyThreme(MainTitle mainTitle) {
 		// TODO Auto-generated method stub
 		try {
-			this.themeDao.ModifyThreme(mainTitle);
+			this.baseDao.update(this.mt);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -55,22 +57,24 @@ public class ThemeServiceImpl implements ThemeService {
 	public List<MainTitle> findAllMianTitles(Page page) {
 		// TODO Auto-generated method stub
 		List<MainTitle> list = null;
-		try {
-			list = this.themeDao.findAllMianTitles(page);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		String hql="";
+			try {
+				List<Object> list1 = this.baseDao.select(hql);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		return list;
 	}
 /**
  * 根据id读贴(后台)
  */
 	public MainTitle getMainTitleById(int mid) {
+		
 		// TODO Auto-generated method stub
 		MainTitle mainTitle = null;
 		try {
-			mainTitle = this.themeDao.getMainTitleById(mid);
+			mainTitle = (MainTitle) this.baseDao.byIdSelect(MainTitle.class, mid);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -83,8 +87,10 @@ public class ThemeServiceImpl implements ThemeService {
 	public List<MainTitle> getMainTitles() {
 		// TODO Auto-generated method stub
 		List<MainTitle> list = null;
+		List<Object> list1=null;
+		String hql="";
 		try {
-			list = this.themeDao.getMainTitles();
+			list1 =  this.baseDao.select(hql);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -96,12 +102,15 @@ public class ThemeServiceImpl implements ThemeService {
 		// TODO Auto-generated method stub
 		int row = 0;
 		try {
-			row = this.themeDao.getSize();
+			//row = this.baseDao.getSize();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return row;
+	}
+	public void delete(int id) throws Exception {
+			this.baseDao.delete(MainTitle.class, id);
 	}
 
 }
