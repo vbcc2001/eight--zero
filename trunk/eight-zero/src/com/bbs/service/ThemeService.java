@@ -47,5 +47,6 @@ public interface ThemeService {
 	 */
 	public List<MainTitle> findAllMianTitles(Page page) throws Exception;
 	public int getSize()throws Exception;
+	public void delete(int mid) throws Exception;
 	
 }
