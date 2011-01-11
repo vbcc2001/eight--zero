@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Struts2Diagram version="2.0">
-  <include file="struts-userTable.xml" location="10,10" size="150,30" />
+  <package name="theme" location="0,0" size="0,0">
+    <action name="delete" location="0,0" size="0,0" />
+  </package>
 </Struts2Diagram>
 
