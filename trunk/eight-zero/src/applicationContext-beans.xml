@@ -24,8 +24,8 @@
 		</property>
 	</bean>
 <!-- ******************** 李广继-发表主题bean配置********************************** -->	
-<bean id="themeServiceImpl" class="com.bbs.service.impl.ThemeServiceImpl" scope="prototype">
- 		<property name="baseDAO" ref="iBaseDAOImpl"></property>
+<bean id="themeService" class="com.bbs.service.impl.ThemeServiceImpl" scope="prototype">
+ 		<property name="baseDao" ref="baseDao"></property>
 </bean>
 	
 </beans>
