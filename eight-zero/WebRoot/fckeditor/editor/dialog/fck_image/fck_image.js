@@ -454,7 +454,7 @@ function OnUploadCompleted( errorNumber, fileUrl, fileName, customMsg )
 	switch ( errorNumber )
 	{
 		case 0 :	// No errors
-			alert( 'Your file has been successfully uploaded' ) ;
+			alert( '文件上传成功' ) ;
 			break ;
 		case 1 :	// Custom error
 			alert( customMsg ) ;
@@ -466,11 +466,14 @@ function OnUploadCompleted( errorNumber, fileUrl, fileName, customMsg )
 			alert( 'A file with the same name is already available. The uploaded file has been renamed to "' + fileName + '"' ) ;
 			break ;
 		case 202 :
-			alert( 'Invalid file type' ) ;
+			alert( '上传文件无效' ) ;
 			return ;
 		case 203 :
 			alert( "Security error. You probably don't have enough permissions to upload. Please check your server." ) ;
 			return ;
+		case 204:
+			alert("文件大小超过限制");
+			return;
 		case 500 :
 			alert( 'The connector is disabled' ) ;
 			break ;
