@@ -13,7 +13,6 @@ public class ThemeServiceImpl implements ThemeService {
 	private MainTitle mt = new MainTitle();
 	
 public void setBaseDao(BaseDao baseDao) {
-	System.out.println(baseDao+".......s");
 		this.baseDao = baseDao;
 	}
 /**
