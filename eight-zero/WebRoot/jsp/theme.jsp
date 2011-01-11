@@ -19,7 +19,7 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
 		<script type="text/javascript">
-window.onload = function() {
+ function createfckeditor() {
 	var oFCKeditor = new FCKeditor('mcontent');
 	oFCKeditor.BasePath = "/eight-zero/fckeditor/";
 	oFCKeditor.ToolbarSet = "eduaskbbs";
@@ -27,11 +27,25 @@ window.onload = function() {
 }
 </script>
 		<script type="text/javascript">
+		//光标定位
+		function initFocus(){
+		var obj = document.getElementById("mtitle");
+		obj.focus();
+	}
+	//检查主题
+	function checkMtitle(){
+		var mtitle = document.getElementById("mtitle");
+		if(mtitle.value == ""){
+			alert("您还没有输入主题标题");
+			return false;
+		}
+		return true;
+	}
 //检查验证码是否正确
 function checkCode() {
-	var code = document.getElementById("code");
+	var code = document.getElementsByName("code");
 	var codeR = document.getElementById("codeR");
-	if (docuemnt.themeform.code.value != "") {
+	if (code.value != null) {
 		if (window.XMLHttpRequest) {
 			req = new XMLHttpRequest();
 		} else if (window.ActiveXObject) {
@@ -40,6 +54,8 @@ function checkCode() {
 		//设置回调函数
 		req.onreadystatechange = callbackForCode;
 		var url = "jsp/image.jsp/?code=" + code.value;
+		alert(url+"=====");
+		alert(code.value + "............");
 		req.open("get", url, true);
 		req.send(null);
 		return true;
@@ -80,17 +96,16 @@ function reloadImage() {
 	<%
 		response.setCharacterEncoding("utf-8");
 	%>
-	<body>
-		<form action="mianTitle_IncreaseTheme.action" method="post" name="themeform">
+	<body onload="initFocus();createfckeditor()">
+		<form action="mianTitle_IncreaseTheme.action" method="post" name="themeform" onsubmit="checkMtitle()">
 			<table border="0" width="80%">
 				<tr>
 					<td>
 						帖子标题:
 					</td>
 					<td>
-						<input type="text" name="mtitle" width="80%">
+						<input type="text" name="mtitle" id="mtitle" width="80%">&nbsp;&nbsp;&nbsp;&nbsp;匿名用户不能发表评论！<a href=""> 登录</a>| <a href="">注册</a>
 					</td>
-					</ta>
 				</tr>
 				<tr>
 					<td>
@@ -116,7 +131,8 @@ function reloadImage() {
 				</tr>
 				<tr>
 					<td align="center">
-						<input type="submit" value="发表帖子" onclick="checkAll()">
+						<input type="hidden" name="mianTitle" value="IncreaseTheme" >
+						<input type="submit" value="发表帖子">
 						<input type="reset" value="取消">
 					</td>
 				</tr>
