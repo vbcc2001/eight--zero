@@ -1,5 +1,9 @@
 package com.bbs.struts2;
 
+import java.util.Date;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.struts2.ServletActionContext;
 import com.bbs.service.ThemeService;
 import com.bbs.vo.MainTitle;
@@ -33,6 +37,10 @@ public class MainTitleAction extends ActionSupport implements ModelDriven<MainTi
 		
 		return SUCCESS;
 	}
+	/**
+	 * 删除
+	 * @return
+	 */
 	public String delete()
 	{
 		try {
@@ -40,11 +48,29 @@ public class MainTitleAction extends ActionSupport implements ModelDriven<MainTi
 			message="delete success";
 		} catch (Exception e) {
 			message="delete failure";
-			System.out.println("");
 		}
 		ServletActionContext.getRequest().setAttribute("message", message);
 		return SUCCESS;
 	}
-	
-	
+	/**
+	 * 发表帖子
+	 * @return
+	 */
+	public String IncreaseTheme(){
+		HttpServletRequest request = ServletActionContext.getRequest();
+		//mt.setMid(Integer.parseInt(request.getParameter("mid")));
+		mt.setMtitle(request.getParameter("mtitle"));
+		mt.setMcontent(request.getParameter("mcontent"));
+		mt.setMtime(new Date());
+		System.out.println(new Date()+"==============");
+		System.out.println(request.getParameter("mtitle") + "...........");
+		System.out.println(request.getParameter("mcontent") + "===============");
+		try {
+			this.themeService.IncreaseTheme(mt);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return SUCCESS;
+	}
 }
