@@ -20,7 +20,7 @@
 	-->
 		<script type="text/javascript">
 window.onload = function() {
-	var oFCKeditor = new FCKeditor('MyTextarea');
+	var oFCKeditor = new FCKeditor('mcontent');
 	oFCKeditor.BasePath = "/eight-zero/fckeditor/";
 	oFCKeditor.ToolbarSet = "eduaskbbs";
 	oFCKeditor.ReplaceTextarea();
@@ -81,14 +81,14 @@ function reloadImage() {
 		response.setCharacterEncoding("utf-8");
 	%>
 	<body>
-		<form action="#" method="post" name="themeform">
+		<form action="mianTitle_IncreaseTheme.action" method="post" name="themeform">
 			<table border="0" width="80%">
 				<tr>
 					<td>
 						帖子标题:
 					</td>
 					<td>
-						<input type="text" name="mtitle" id="mtitle" width="80%">
+						<input type="text" name="mtitle" width="80%">
 					</td>
 					</ta>
 				</tr>
@@ -97,7 +97,7 @@ function reloadImage() {
 						帖子内容:
 					</td>
 					<td>
-						<textarea rows="4" cols="60" name="MyTextarea">沙发空缺中~~~~</textarea>
+						<textarea rows="4" cols="60" name="mcontent">沙发空缺中~~~~</textarea>
 					</td>
 				</tr>
 				<tr>
