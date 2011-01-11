@@ -90,6 +90,8 @@ create table MainTitle
    mThing               varchar(100),
    sid                  int,
    mstatus              int,
+   topstatus            int,
+   checkcount           int,
    primary key (mid)
 );
 
@@ -254,21 +256,21 @@ INSERT INTO `sonborad` VALUES (NULL , '油价', 3,NULL), (NULL , '菜价', 3,NUL
 
 /*主题表*/
 
-INSERT INTO `maintitle` VALUES (NULL , '非2好看不？', '非2不好看，很不好看，记得不去看', '2011-01-02 11:00:07', 1, NULL , 1, 1);
-INSERT INTO `maintitle` VALUES (NULL , '非2好看不？', '非2不好看，很不好看，记得不去看', '2011-01-02 11:00:07', 1, NULL , 1, 1);
-INSERT INTO `maintitle` VALUES (NULL , '非2好看不？', '非2不好看，很不好看，记得不去看', '2011-01-02 11:00:07', 1, NULL , 1, 1);
+INSERT INTO `maintitle` VALUES (NULL , '非2好看不？', '非2不好看，很不好看，记得不去看', '2011-01-02 11:00:07', 1, NULL , 1, 1,0,0);
+INSERT INTO `maintitle` VALUES (NULL , '非2好看不？', '非2不好看，很不好看，记得不去看', '2011-01-02 11:00:07', 1, NULL , 1, 1,0,0);
+INSERT INTO `maintitle` VALUES (NULL , '非2好看不？', '非2不好看，很不好看，记得不去看', '2011-01-02 11:00:07', 1, NULL , 1, 1,0,0);
 
-INSERT INTO `maintitle` VALUES (NULL , '盗梦空间好看不？', '盗梦空间好看，很好看，记得去看', '2011-01-02 11:00:07', 1, NULL , 2, 1);
-INSERT INTO `maintitle` VALUES (NULL , '盗梦空间好看不？', '盗梦空间好看，很好看，记得去看', '2011-01-02 11:00:07', 1, NULL , 2, 1);
-INSERT INTO `maintitle` VALUES (NULL , '盗梦空间好看不？', '盗梦空间好看，很好看，记得去看', '2011-01-02 11:00:07', 1, NULL , 2, 1);
+INSERT INTO `maintitle` VALUES (NULL , '盗梦空间好看不？', '盗梦空间好看，很好看，记得去看', '2011-01-02 11:00:07', 1, NULL , 2, 1,0,0);
+INSERT INTO `maintitle` VALUES (NULL , '盗梦空间好看不？', '盗梦空间好看，很好看，记得去看', '2011-01-02 11:00:07', 1, NULL , 2, 1,0,0);
+INSERT INTO `maintitle` VALUES (NULL , '盗梦空间好看不？', '盗梦空间好看，很好看，记得去看', '2011-01-02 11:00:07', 1, NULL , 2, 1,0,0);
 
-INSERT INTO `maintitle` VALUES (NULL , '陈奕迅的歌好听不？', '陈奕迅的歌好听，很好听，记得去好听', '2011-01-02 11:00:07', 1, NULL , 3, 1);
-INSERT INTO `maintitle` VALUES (NULL , '陈奕迅的歌好听不？', '陈奕迅的歌好听，很好听，记得去好听', '2011-01-02 11:00:07', 2, NULL , 3, 1);
-INSERT INTO `maintitle` VALUES (NULL , '陈奕迅的歌好听不？', '陈奕迅的歌好听，很好听，记得去好听', '2011-01-02 11:00:07', 2, NULL , 3, 1);
+INSERT INTO `maintitle` VALUES (NULL , '陈奕迅的歌好听不？', '陈奕迅的歌好听，很好听，记得去好听', '2011-01-02 11:00:07', 1, NULL , 3, 1,0,0);
+INSERT INTO `maintitle` VALUES (NULL , '陈奕迅的歌好听不？', '陈奕迅的歌好听，很好听，记得去好听', '2011-01-02 11:00:07', 2, NULL , 3, 1,0,0);
+INSERT INTO `maintitle` VALUES (NULL , '陈奕迅的歌好听不？', '陈奕迅的歌好听，很好听，记得去好听', '2011-01-02 11:00:07', 2, NULL , 3, 1,0,0);
 
-INSERT INTO `maintitle` VALUES (NULL , '罗志祥的歌好听不？', '罗志祥的歌好听，很好听，记得去好听', '2011-01-02 11:00:07', 3, NULL , 4, 1);
-INSERT INTO `maintitle` VALUES (NULL , '罗志祥的歌好听不？', '罗志祥的歌好听，很好听，记得去好听', '2011-01-02 11:00:07', 3, NULL , 4, 1);
-INSERT INTO `maintitle` VALUES (NULL , '罗志祥的歌好听不？', '罗志祥的歌好听，很好听，记得去好听', '2011-01-02 11:00:07', 4, NULL , 4, 1);
+INSERT INTO `maintitle` VALUES (NULL , '罗志祥的歌好听不？', '罗志祥的歌好听，很好听，记得去好听', '2011-01-02 11:00:07', 3, NULL , 4, 1,0,0);
+INSERT INTO `maintitle` VALUES (NULL , '罗志祥的歌好听不？', '罗志祥的歌好听，很好听，记得去好听', '2011-01-02 11:00:07', 3, NULL , 4, 1,0,0);
+INSERT INTO `maintitle` VALUES (NULL , '罗志祥的歌好听不？', '罗志祥的歌好听，很好听，记得去好听', '2011-01-02 11:00:07', 4, NULL , 4, 1,0,0);
 
 INSERT INTO `maintitle` VALUES (NULL , '油价贵不？', '油价下降，下降，下降', '2011-01-02 11:00:07', 2, NULL , 5, 1);
 INSERT INTO `maintitle` VALUES (NULL , '油价贵不？', '油价下降，下降，下降', '2011-01-02 11:00:07', 2, NULL , 5, 1);

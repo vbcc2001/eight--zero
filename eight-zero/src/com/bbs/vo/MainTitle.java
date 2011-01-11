@@ -9,10 +9,12 @@ public class MainTitle {
 	private String mtitle;			//主题标题
 	private String mcontent;		//主题内容
 	private Date mtime;				//发表主题时间
-	private Userinfo userinfo;				//发表主题用户信息(ID)
+	private Userinfo userinfo;		//发表主题用户信息(ID)
 	private String mThing;			//表发主题附件
-	private SonBorad sonBorad;				//主题类型信息(ID)
+	private SonBorad sonBorad;		//主题类型信息(ID)
 	private int mstatus;			//主题状态(0:屏蔽;1可以看)
+	private int topstatus; 			//是否置顶状态
+	private int checkcount;			//浏览次数
 	private Set replay;				//所有回复信息
 	public String getmThing() {
 		return mThing;
@@ -73,5 +75,17 @@ public class MainTitle {
 	}
 	public void setMstatus(int mstatus) {
 		this.mstatus = mstatus;
+	}
+	public int getTopstatus() {
+		return topstatus;
+	}
+	public void setTopstatus(int topstatus) {
+		this.topstatus = topstatus;
+	}
+	public int getCheckcount() {
+		return checkcount;
+	}
+	public void setCheckcount(int checkcount) {
+		this.checkcount = checkcount;
 	}
 }
