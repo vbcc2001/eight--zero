@@ -24,11 +24,18 @@
         <property name="mThing" type="string">
             <column name="mThing"  />
         </property>
+
      	<many-to-one name="sonBorad" class="com.bbs.vo.SonBorad">
      		<column name="sid"/>
      	</many-to-one>
          <property name="mstatus" type="int">
             <column name="mstatus"  />
+        </property>
+        <property name="topstatus" type="int">
+            <column name="topstatus"  />
+        </property>
+        <property name="checkcount" type="int">
+            <column name="checkcount"  />
         </property>
         <set name="replay">
         	<key>
