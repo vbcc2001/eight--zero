@@ -58,4 +58,17 @@
 		<filter-name>struts2</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	 <servlet>
+      <servlet-name>Connector</servlet-name>
+        <servlet-class>
+          com.bbs.fckeditor.ConnectorServlet
+      </servlet-class>
+      <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+      <servlet-name>Connector</servlet-name>
+      <url-pattern>
+        /fckeditor/editor/filemanager/connectors/*
+      </url-pattern>
+    </servlet-mapping>
 </web-app>
