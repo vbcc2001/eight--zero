@@ -5,18 +5,7 @@
 	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 	
-	<!-- 刘晓昌start -->
-	<!-- 
-	  <bean id="userTableDao" class="com.bbs.dao.impl.IuserTableimpl">
-		<property name="sessionFactory">
-			<ref bean="sessionFactory"></ref>
-		</property>
-	</bean>
-	<bean id="iuserTableServiceimpl" class="com.bbs.service.impl.IUserTableServiceimpl">
-		<property name="userTableDao" ref="userTableDao"/>
-	</bean>
-	 -->
-	<!-- 刘晓昌END -->
+	
 <!-- ******************** 版块分类bean配置********************************** -->
 	<bean id="boradTableService" class="com.bbs.service.impl.BoradTableServiceImpl">
 		<property name="baseDao">
@@ -27,5 +16,16 @@
 <bean id="themeService" class="com.bbs.service.impl.ThemeServiceImpl" scope="prototype">
  		<property name="baseDao" ref="baseDao"></property>
 </bean>
-	
+
+<!-- ******************** 刘晓昌-注册bean配置********************************** -->	
+<!-- 刘晓昌start -->
+	  <bean id="userTableDao" class="com.bbs.dao.impl.IuserTableimpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"></ref>
+		</property>
+	</bean>
+	<bean id="iuserTableServiceimpl" class="com.bbs.service.impl.IUserTableServiceimpl">
+		<property name="userTableDao" ref="userTableDao"/>
+	</bean>
+	<!-- 刘晓昌END -->
 </beans>

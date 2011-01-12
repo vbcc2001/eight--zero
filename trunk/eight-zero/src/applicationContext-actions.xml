@@ -6,4 +6,9 @@
 	<bean id="mainTitleAction"  class="com.bbs.struts2.MainTitleAction" scope="prototype">
 		<property name="themeService" ref="themeService"/>
 	</bean>	
+	
+<!-- ******************** 刘晓昌-用户注册action配置********************************** -->	
+	<bean name="userTableAction" class="com.bbs.struts2.UserTableAction" scope="prototype">
+		<property name="iuserTableServiceimpl" ref="iuserTableServiceimpl" />
+	</bean>	
 </beans>
