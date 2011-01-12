@@ -9,7 +9,7 @@ import com.bbs.vo.UserTable;
 
 public class IuserTableimpl extends HibernateDaoSupport implements UserTableDao{
 
-	//查询是否存在此用户TRUE表示用户可用!
+	//查询是否存在此用户,TRUE表示用户可用!
 	public boolean checkUser(String uname) throws Exception {
 		String queryString = "from UserTable u where u.uname=?";
 		List list = getHibernateTemplate().find(queryString,uname);
@@ -19,6 +19,15 @@ public class IuserTableimpl extends HibernateDaoSupport implements UserTableDao{
 		}
 		return true;
 		
+	}
+	
+	//查询是否存在此邮箱,TRUE表示用户可用
+	public boolean checkEmail(String uemail) throws Exception {
+		String queryString="from UserTable u where u.uemail=?";
+		List list=getHibernateTemplate().find(queryString,uemail);
+		if(list.size()>0)
+		return false;
+		return true;
 	}
 	
 	//增加用户
@@ -32,6 +41,5 @@ public class IuserTableimpl extends HibernateDaoSupport implements UserTableDao{
 		
 	}
 
-	
 
 }

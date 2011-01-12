@@ -15,20 +15,22 @@ $(document)
 								} else {
 									if (reg.test(uname) == 0) {
 										view.html("");
+										$("#nameisOkOrNo").html("");
+										$("#suserName").html("");
 										view
 												.html("\u7528\u6237\u540d\u683c\u5f0f\u9519\u8bef"); // 用户名格式错误
 										return false;
 									} else {
+										view.html("");
+										$("#suserName").html("");
 										$.post("userTable_checkUser.action", {
 											uname : uname
 										}, function(response) {
-											// document.getElementById("nameisOkOrNo").innerHTML="dd";
-												$("#nameisOkOrNo").html(
-														response);
-												alert("a");
-											});
+											$("#nameisOkOrNo").html(response);
+										});
 									}
 									view.html("");
+									return true;
 								}
 							});
 
@@ -70,17 +72,30 @@ $(document)
 				// 注册验证Email
 				$("#email").blur(function() {
 					var reg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
-					var obj = $("#email").val();
+					var uemail = $("#email").val();
 					var view = $("#emailInfo");
-					if (obj == "") {
+					if (uemail == "") {
 						view.html("Email\u4e0d\u80fd\u4e3a\u7a7a!"); // Email不能为空!
 						return false;
 					}
-					if (reg.test(obj) == 0) {
+					if (reg.test(uemail) == 0) {
+						view.html("");
+						$("#emailisOkOrNo").html("");
 						view.html("Emial\u683c\u5f0f\u9519\u8bef\uff01"); // Emial格式错误！
 						return false;
 					}
 					view.html("");
+					$.post("userTable_checkEmail.action", {
+						uemail : uemail
+					}, function(response) {
+						$("#emailisOkOrNo").html(response);
+					});
 					return true;
 				});
-			});
+				
+				//验证所有
+				$("#checkall").click(function(){
+					alert("556");
+				});
+				
+		});

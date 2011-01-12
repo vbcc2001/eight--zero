@@ -33,7 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		  <TR>
 		    <TD><SPAN class="star">*</SPAN>会员名</TD>
 		    <TD><INPUT class="text" type="text" id="userName" name="uname" />
-		    <span  class="info" id="userNameInfo"></span><s:label name="suserName"></s:label><div id="nameisOkOrNo"></div>
+		    <span id="nameisOkOrNo"></span><span  class="info" id="userNameInfo"></span><s:fielderror name="suserName" id="suserName"></s:fielderror>
 		    </TD>
 		    	
 		  </TR>
@@ -47,7 +47,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    <TD><SPAN class="star">*</SPAN>密码</TD>
 		    <TD><INPUT class="text" type="password" id="password" name="upwd"/>
 		    <span  class="info" id="passwordInfo"></span><s:label name="supwd"></s:label>
-		    	</TD>
+		    </TD>
 		    	
 		  </TR>
 		  
@@ -70,7 +70,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		  <TR>
 		    <TD><SPAN class="star">*</SPAN>EMAIL</TD>
 		    <TD><INPUT class="text" type="text" id="email" name="uemail" />
-		    	<span id="emailInfo"></span><s:label name="suemail"></s:label>
+		    	<span id="emailisOkOrNo"></span><span id="emailInfo"></span><s:label name="suemail"></s:label>
 		    	</TD>
 		    	
 		  </TR>
@@ -96,7 +96,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		  </TR>
 		  <TR>
 		    <TD></TD>
-		    <TD><INPUT value="注册" type="submit" /> &nbsp;<input type="reset" value="重置" /></TD>
+		    <TD><INPUT value="注册" type="button" id="checkall"/> &nbsp;<input type="reset" value="重置" /></TD>
 		  </TR>
 		  <TR>
 		    <TD></TD>
