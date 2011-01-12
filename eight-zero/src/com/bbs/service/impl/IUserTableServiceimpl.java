@@ -32,5 +32,10 @@ public class IUserTableServiceimpl implements UserTableService{
 	public void updateUser(int uid) throws Exception {
 		
 	}
+	
+	//查询是否存在此邮箱
+	public boolean checkEmail(String uemail) throws Exception {
+		return userTableDao.checkEmail(uemail);
+	}
 
 }

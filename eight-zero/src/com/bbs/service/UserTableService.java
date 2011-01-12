@@ -11,5 +11,7 @@ public interface UserTableService {
 	
 	//根据ID修改用户信息
 	public void updateUser(int uid) throws Exception;
-
+	
+	//查询是否存在此邮箱
+	public boolean checkEmail(String uemail) throws Exception;
 }

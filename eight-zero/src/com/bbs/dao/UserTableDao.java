@@ -15,5 +15,7 @@ public interface UserTableDao
 	//根据ID修改用户状态
 	//public void 
 	
+	//查询是否存在此邮箱
+	public boolean checkEmail(String uemail) throws Exception;
 
 }
