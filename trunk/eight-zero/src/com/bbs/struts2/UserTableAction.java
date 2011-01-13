@@ -1,9 +1,11 @@
 package com.bbs.struts2;
 
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
 import java.util.regex.Pattern;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.struts2.ServletActionContext;
@@ -18,6 +20,7 @@ public class UserTableAction extends ActionSupport {
 	private String upwd; // 用户密码
 	private String upwd2; // 第二次用户密码
 	private String uemail; // 用户邮箱
+	private String handcode;	//验证码
 	private int sex; // 用户性别(1:男生;0:女生)
 	private IUserTableServiceimpl iuserTableServiceimpl;
 
@@ -136,7 +139,6 @@ public class UserTableAction extends ActionSupport {
 	
 	public String addUser(){
 		Date registerTime=new Date();
-		System.out.println(registerTime);
 		UserTable user = new UserTable(this.uname,this.upwd,this.uemail,this.sex,registerTime,1);
 		try {
 			this.iuserTableServiceimpl.addUser(user);
@@ -146,6 +148,32 @@ public class UserTableAction extends ActionSupport {
 		}
 		
 		return "success";
+	}
+	
+	public String checkCode(){
+		HttpServletResponse res = ServletActionContext.getResponse();
+		try {
+			PrintWriter out = res.getWriter();
+			HttpServletRequest request = ServletActionContext.getRequest();
+			String code = (String)request.getSession().getAttribute("rand");
+			if(this.handcode.trim().equals(code)){
+				out.print("验证码正确！");
+			}else
+			{
+				out.print("验证码错误！");
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public String getHandcode() {
+		return handcode;
+	}
+
+	public void setHandcode(String handcode) {
+		this.handcode = handcode;
 	}
 
 //	public void validate() {

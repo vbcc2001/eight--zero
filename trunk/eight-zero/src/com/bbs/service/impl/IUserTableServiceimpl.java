@@ -25,7 +25,7 @@ public class IUserTableServiceimpl implements UserTableService{
 	
 	//增加用户
 	public void addUser(UserTable user) throws Exception {
-		
+		userTableDao.addUser(user);
 	}
 
 	//根据ID修改用户信息
