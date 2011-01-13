@@ -14,6 +14,16 @@ public class UserTable {
 	private Date regTime;			//注册时间
 	private int ustatus;			//用户状态(1:可用;0:锁定)
 	private Userinfo userinfo;		//用户信息表信息(如:uscore)
+	
+	public UserTable(String uname, String upwd, String uemail, int sex,
+			Date regTime, int ustatus) {
+		this.uname = uname;
+		this.upwd = upwd;
+		this.uemail = uemail;
+		this.sex = sex;
+		this.regTime = regTime;
+		this.ustatus = ustatus;
+	}
 	public Userinfo getUserinfo() {
 		return userinfo;
 	}
