@@ -8,6 +8,7 @@
      <package name="default"  extends="struts-default">
      	<action name="userTable_*" class="userTableAction" method="{1}">
      		<result name="input">/jsp/register.jsp</result>
+     		<result name="success">/jsp/index.jsp</result>
      	</action>
      </package>
 </struts>    

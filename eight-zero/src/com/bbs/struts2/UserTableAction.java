@@ -1,6 +1,7 @@
 package com.bbs.struts2;
 
 import java.io.PrintWriter;
+import java.util.Date;
 import java.util.regex.Pattern;
 
 import javax.servlet.http.HttpServletResponse;
@@ -8,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.struts2.ServletActionContext;
 
 import com.bbs.service.impl.IUserTableServiceimpl;
+import com.bbs.vo.UserTable;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class UserTableAction extends ActionSupport {
@@ -130,6 +132,20 @@ public class UserTableAction extends ActionSupport {
 			e.printStackTrace();
 		}
 		return null;
+	}
+	
+	public String addUser(){
+		Date registerTime=new Date();
+		System.out.println(registerTime);
+		UserTable user = new UserTable(this.uname,this.upwd,this.uemail,this.sex,registerTime,1);
+		try {
+			this.iuserTableServiceimpl.addUser(user);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return "success";
 	}
 
 //	public void validate() {

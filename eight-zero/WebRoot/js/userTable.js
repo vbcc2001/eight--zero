@@ -16,13 +16,13 @@ $(document)
 									if (reg.test(uname) == 0) {
 										view.html("");
 										$("#nameisOkOrNo").html("");
-										$("#suserName").html("");
+										$(".errorMessage").html("");
 										view
 												.html("\u7528\u6237\u540d\u683c\u5f0f\u9519\u8bef"); // 用户名格式错误
 										return false;
 									} else {
 										view.html("");
-										$("#suserName").html("");
+										$(".errorMessage").html("");
 										$.post("userTable_checkUser.action", {
 											uname : uname
 										}, function(response) {
@@ -93,9 +93,15 @@ $(document)
 					return true;
 				});
 				
-				//验证所有
-				$("#checkall").click(function(){
-					alert("556");
+				// 验证码
+				$("#handvalidateCode").blur(function(){
+					var code=$("#validateCode").val();
+					alert(code);
 				});
+				
+				//验证所有
+				//$("#checkall").click(function(){
+				//	alert("556");
+				//});
 				
 		});

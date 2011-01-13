@@ -24,13 +24,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
   <jsp:include page="header.jsp" />
-    <DIV id="login" style="width: 550px" >
-<form action="userTable_checkUser.action" method="post" name="registerForm" id="registerForm" >
+    <DIV id="login" style="width: 550px ;margin-left:auto;margin-right:auto;" >
+<form action="userTable_addUser.action" method="post" name="registerForm" id="registerForm" >
 	<SPAN class="title">欢迎注册80社团会员：</SPAN><BR>
 	<span class="star" ></span>
 	<TABLE>
 	  <TBODY>
-		  <TR>
+		  <TR >
 		    <TD><SPAN class="star">*</SPAN>会员名</TD>
 		    <TD><INPUT class="text" type="text" id="userName" name="uname" />
 		    <span id="nameisOkOrNo"></span><span  class="info" id="userNameInfo"></span><s:fielderror name="suserName" id="suserName"></s:fielderror>
@@ -90,13 +90,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		  
 		  <TR>
 		    <TD><SPAN class="star">*</SPAN>验证码</TD>
-		    <TD><INPUT class="text" type="text" id="validateCode" name="validateCode" size="6" onblur="return checkregcode()" onkeyup="checkCode(this)" />
-		    	<input class="validateCode" type="text" size="8" disabled="disabled" />
+		    <TD><input class="text" type="text" id="handvalidateCode" name="handvalidateCode" size="6" />
+		    	<INPUT class="validateCode" id="validateCode" type="text" size="8" disabled="disabled" />
 		    	</TD>
 		  </TR>
 		  <TR>
 		    <TD></TD>
-		    <TD><INPUT value="注册" type="button" id="checkall"/> &nbsp;<input type="reset" value="重置" /></TD>
+		    <TD><INPUT value="注册" type="submit" id="checkall"/> &nbsp;<input type="reset" value="重置" /></TD>
 		  </TR>
 		  <TR>
 		    <TD></TD>

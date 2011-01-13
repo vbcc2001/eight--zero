@@ -32,6 +32,8 @@ public class IuserTableimpl extends HibernateDaoSupport implements UserTableDao{
 	
 	//增加用户
 	public void addUser(UserTable user) throws Exception {
+		System.out.println("增加用户");
+		getHibernateTemplate().save(user);
 		
 	}
 
