@@ -1,12 +1,15 @@
 package com.bbs.struts2;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.ServletActionContext;
 import com.bbs.service.ThemeService;
 import com.bbs.vo.MainTitle;
+import com.bbs.vo.Userinfo;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 /**
@@ -15,7 +18,7 @@ import com.opensymphony.xwork2.ModelDriven;
  *
  */
 public class MainTitleAction extends ActionSupport implements ModelDriven<MainTitle> {
-	private MainTitle mt  = new MainTitle();
+	private MainTitle mt ;
 	private ThemeService themeService;
 	private String message;
 	public void setThemeService(ThemeService themeService) {
@@ -58,13 +61,12 @@ public class MainTitleAction extends ActionSupport implements ModelDriven<MainTi
 	 */
 	public String IncreaseTheme(){
 		HttpServletRequest request = ServletActionContext.getRequest();
-		//mt.setMid(Integer.parseInt(request.getParameter("mid")));
-		mt.setMtitle(request.getParameter("mtitle"));
-		mt.setMcontent(request.getParameter("mcontent"));
 		mt.setMtime(new Date());
-		System.out.println(new Date()+"==============");
-		System.out.println(request.getParameter("mtitle") + "...........");
-		System.out.println(request.getParameter("mcontent") + "===============");
+		mt.setCheckcount(0);
+		Userinfo u = new Userinfo();
+		u.setUid(2);
+		mt.setUserinfo(u);
+		//mt
 		try {
 			this.themeService.IncreaseTheme(mt);
 		} catch (Exception e) {
@@ -72,5 +74,18 @@ public class MainTitleAction extends ActionSupport implements ModelDriven<MainTi
 			e.printStackTrace();
 		}
 		return SUCCESS;
+	}
+	
+	public String getType(){
+		ActionContext context = ActionContext.getContext();
+		List list = null;
+		try {
+			list = this.themeService.findall();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		context.getSession().put("list", list);
+		return "gettype_success";
 	}
 }
