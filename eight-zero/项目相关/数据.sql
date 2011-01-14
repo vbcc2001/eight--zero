@@ -47,7 +47,7 @@ INSERT INTO `boradtable` VALUES (1 , '杂谈','zatan.png'),(2 , '娱乐','yule.p
 
 /*小板块表*/
 
-INSERT INTO `sonborad` VALUES (NULL , '文化漫谈', 1,default), (NULL , '三军论坛', 1,default), (NULL , '大话教育', 1,default);
+INSERT INTO `sonborad` VALUES (null,'请选择版块类型',null,default),(NULL , '文化漫谈', 1,default), (NULL , '三军论坛', 1,default), (NULL , '大话教育', 1,default);
 
 INSERT INTO `sonborad` VALUES (NULL , '娱乐八卦', 2,default), (NULL , '体育沙龙', 2,default), (NULL , '影行天下', 2,default), (NULL , '星座论坛', 2,default);
 
