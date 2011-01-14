@@ -7,6 +7,7 @@ import com.bbs.dao.ThemeDao;
 import com.bbs.service.ThemeService;
 import com.bbs.vo.MainTitle;
 import com.bbs.vo.Page;
+import com.bbs.vo.SonBorad;
 
 public class ThemeServiceImpl implements ThemeService {
 	private BaseDao baseDao;
@@ -111,5 +112,18 @@ public void setBaseDao(BaseDao baseDao) {
 	public void delete(int id) throws Exception {
 			this.baseDao.delete(MainTitle.class, id);
 	}
-
+	/**
+	 * 查询类型
+	 */
+	public List<Object> findall() {
+		// TODO Auto-generated method stub
+		List<Object> list = null;
+		try {
+			list=baseDao.findAll("SonBorad");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
 }
