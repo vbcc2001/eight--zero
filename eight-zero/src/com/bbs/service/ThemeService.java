@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.bbs.vo.MainTitle;
 import com.bbs.vo.Page;
+import com.bbs.vo.SonBorad;
 
 public interface ThemeService {
 
@@ -48,5 +49,10 @@ public interface ThemeService {
 	public List<MainTitle> findAllMianTitles(Page page) throws Exception;
 	public int getSize()throws Exception;
 	public void delete(int mid) throws Exception;
-	
+	/**
+	 * 获得类型
+	 * @return
+	 * @throws Exception
+	 */
+	public List<Object> findall() throws Exception;
 }
