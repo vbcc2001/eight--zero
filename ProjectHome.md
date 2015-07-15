@@ -1,0 +1,1 @@
+由struts2+hibernate3+spring3构建的bbs系统
